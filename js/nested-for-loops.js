@@ -4,12 +4,22 @@
  * @param {number} [width=depth] 
  * @returns {string}
  */
-function nestedForLoops (depth, width = depth) {
+function nestedForLoops(depth, width = depth) {
   let result = "\n";
-
-  // Write code here
-
+  for (var i = 0; i < depth; i++) {
+    for (var j = 0; j < width; j++) {
+      result += "{x:" + j + ", y:" + i + "}";
+      if (j + 1 < width) {
+        result += ", ";
+      } else {
+        result += "\n";
+      }
+    }
+  }
+  return result;
 };
 
 // To see your console output outside the tests add function calls here.
-// console.log(nestedForLoops(4));
+// console.log(nestedForLoops(3));
+// console.log(nestedForLoops(10, 5));
+// console.log(nestedForLoops(5, 10));
