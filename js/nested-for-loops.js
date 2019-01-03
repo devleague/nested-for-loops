@@ -4,11 +4,19 @@
  * @param {number} [width=depth] 
  * @returns {string}
  */
-function nestedForLoops (depth, width = depth) {
+function nestedForLoops(depth, width = depth) {
   let result = "\n";
-
-  // Write code here
-
+  let arr = [];
+  arr.push('\n');
+  for (let i = 0; i < depth; i++) {
+    arr.length = 0;
+    for (let j = 0; j < width; j++) {
+      arr.push('{x:' + j + ', y:' + i + '}');
+    }
+    result = result.concat(arr.join(', '))
+    result = result.concat('\n')
+  }
+  return result;
 };
 
 // To see your console output outside the tests add function calls here.
