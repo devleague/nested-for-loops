@@ -9,7 +9,15 @@ function nestedForLoops (depth, width = depth) {
 
   // Write code here
 
+  for (let i=0; i<depth; i++){
+    for (let j=0; j<width; j++){
+      result = result + '{x:' + j + ', ' + 'y:' + i + '}, ';
+    }
+    result = result + '\n';
+    result = result.replace(', \n', '\n')
+  }
+  return result;
 };
 
-// To see your console output outside the tests add function calls here.
-// console.log(nestedForLoops(4));
+// To see our console output outside the tests add function calls here.
+//console.log(nestedForLoops(3));
